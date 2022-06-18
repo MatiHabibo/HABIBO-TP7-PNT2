@@ -4,6 +4,7 @@
     <h1>VISTA DE LOS INGRESOS</h1>
      <button class="btn btn-success mr-2 mb-3" @click="getIngresos()">Ver ingresos</button>
      
+
       <div class="media alert alert-info" v-for="(ingreso,index) in ingresos" :key="index">
           <div class="media-body ml-4">
               <br>
@@ -12,6 +13,11 @@
               <p>Edad: <i>{{ ingreso.edad }}</i></p>
               <p>Mail: {{ ingreso.email }}</p>
           </div>
+      </div>
+      <div v-show="!ingresos.length">
+        <div class="alert alert-warning">
+        <p>No hay usuarios para mostrar</p>
+        </div>
       </div>
   </section>
 
